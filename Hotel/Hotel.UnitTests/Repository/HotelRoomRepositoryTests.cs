@@ -14,7 +14,7 @@ namespace Hotel.UnitTests.Repository
         {
             //prepare
             using var context = DbContextFactory.CreateDbContext();
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -62,7 +62,7 @@ namespace Hotel.UnitTests.Repository
             //prepare
             using var context = DbContextFactory.CreateDbContext();
 
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -105,13 +105,14 @@ namespace Hotel.UnitTests.Repository
                 options => options.Excluding(x => x.Hotel));
         }
 
+        [Test]
         public void SaveNewHotelRoomTest()
         {
             //prepare
             using var context = DbContextFactory.CreateDbContext();
 
             //execute
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -123,7 +124,7 @@ namespace Hotel.UnitTests.Repository
             context.Hotels.Add(hotel);
             context.SaveChanges();
 
-            var room = new HotelRoomEntity
+            var room = new HotelRoomEntity()
             {
                 Description = "description1",
                 NumberOfGuests = 1,
@@ -153,7 +154,7 @@ namespace Hotel.UnitTests.Repository
             //prepare
             using var context = DbContextFactory.CreateDbContext();
 
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -165,7 +166,7 @@ namespace Hotel.UnitTests.Repository
             context.Hotels.Add(hotel);
             context.SaveChanges();
 
-            var room = new HotelRoomEntity
+            var room = new HotelRoomEntity()
             {
                 Description = "description1",
                 NumberOfGuests = 1,
@@ -193,7 +194,7 @@ namespace Hotel.UnitTests.Repository
             //prepare
             using var context = DbContextFactory.CreateDbContext();
 
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -205,7 +206,7 @@ namespace Hotel.UnitTests.Repository
             context.Hotels.Add(hotel);
             context.SaveChanges();
 
-            var room = new HotelRoomEntity
+            var room = new HotelRoomEntity()
             {
                 Description = "description1",
                 NumberOfGuests = 1,
@@ -230,7 +231,7 @@ namespace Hotel.UnitTests.Repository
             //prepare
             using var context = DbContextFactory.CreateDbContext();
 
-            var hotel = new HotelEntity
+            var hotel = new HotelEntity()
             {
                 Title = "Test",
                 Info = "Test",
@@ -296,7 +297,8 @@ namespace Hotel.UnitTests.Repository
         {
             using (var context = DbContextFactory.CreateDbContext())
             {
-                context.Users.RemoveRange(context.Users);
+                context.HotelRooms.RemoveRange(context.HotelRooms);
+                context.Hotels.RemoveRange(context.Hotels);
                 context.SaveChanges();
             }
         }
