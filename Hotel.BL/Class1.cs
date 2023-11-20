@@ -1,4 +1,4 @@
-﻿namespace Hotel.DataAccess
+﻿namespace Hotel.BL
 {
     public class Class1
     {
