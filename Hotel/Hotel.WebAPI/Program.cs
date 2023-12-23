@@ -20,6 +20,8 @@ var app = builder.Build();
 SerilogConfigurator.ConfigureApplication(app);
 SwaggerConfigurator.ConfigureApplication(app);
 DbContextConfigurator.ConfigureApplication(app);
+MapperConfigurator.ConfigureServices(builder.Services);
+ServicesConfigurator.ConfigureService(builder.Services);
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
