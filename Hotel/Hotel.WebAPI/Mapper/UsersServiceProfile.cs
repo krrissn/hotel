@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Hotel.BL.Auth.Entities;
 using Hotel.BL.User.Entities;
 using Hotel.WebAPI.Controllers.Entities;
 

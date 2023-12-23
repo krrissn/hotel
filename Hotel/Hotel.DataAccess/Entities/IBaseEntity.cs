@@ -1,11 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-
+﻿
 namespace Hotel.DataAccess.Entities
 {
-    public class BaseEntity : IBaseEntity
+    public interface IBaseEntity
     {
-        [Key]
         public int Id { get; set; }
 
         public Guid ExternalId { get; set; }

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace Hotel.DataAccess
 {
-    public class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : class, IBaseEntity
     {
         public Repository(IDbContextFactory<HotelDbContext> contextFactory)
         {
